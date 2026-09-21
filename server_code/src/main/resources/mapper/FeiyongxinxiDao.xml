@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.FeiyongxinxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.FeiyongxinxiEntity" id="feiyongxinxiMap">
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="xiaoqumingcheng" column="xiaoqumingcheng"/>
+        <result property="fangjianhao" column="fangjianhao"/>
+        <result property="loudongshu" column="loudongshu"/>
+        <result property="wuyefei" column="wuyefei"/>
+        <result property="qunuanfei" column="qunuanfei"/>
+        <result property="shuidianfei" column="shuidianfei"/>
+        <result property="shoufeijine" column="shoufeijine"/>
+        <result property="jiesuanshijian" column="jiesuanshijian"/>
+        <result property="ispay" column="ispay"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.FeiyongxinxiView" >
+
+		SELECT  feiyongxinxi.* FROM feiyongxinxi  feiyongxinxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.FeiyongxinxiView" >
+		SELECT * FROM feiyongxinxi  feiyongxinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
